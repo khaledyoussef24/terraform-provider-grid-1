@@ -49,6 +49,8 @@ jobs:
           sudo  sed -i -- 's/Peers\: \[\]/Peers: [\n'"$PEERS"']/g' /etc/yggdrasil.conf
           sudo systemctl start yggdrasil
       - uses: actions/checkout@v3.5.2
+        with:
+          fetch-depth: 50
       - run: git checkout $(${{ matrix.describe }})
       - name: Build
         run: |
