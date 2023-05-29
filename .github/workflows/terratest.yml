@@ -50,7 +50,7 @@ jobs:
           sudo systemctl start yggdrasil
       - uses: actions/checkout@v3.5.2
         with:
-          fetch-depth: 50
+          fetch-depth: 0
       - run: git checkout $(${{ matrix.describe }})
       - name: Build
         run: |
